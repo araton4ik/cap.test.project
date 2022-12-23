@@ -14,10 +14,11 @@ modules:
     properties:
       srv-url: ${default-url}
   parameters:
+    disk-quota: 2048M
     host: ${appname}
     buildpack: nodejs_buildpack
   build-parameters:
-    #ignore: [".env", "./node_modules"]
+    gnore: [".env", "./node_modules", "./mta_archives", "./app"]
     builder: npm-ci
 - name: MyHANAApp-db-deployer
   type: hdb
@@ -25,7 +26,7 @@ modules:
   requires:
   - name: MyHANAApp-db
   parameters:
-    #ignore: [".env", "./node_modules"]  
+    ignore: [".env", "./node_modules"]  
     buildpack: nodejs_buildpack
 - name: MyHANAApp-destination-content
   type: com.sap.application.content

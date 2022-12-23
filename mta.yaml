@@ -18,7 +18,7 @@ modules:
     host: ${appname}
     buildpack: nodejs_buildpack
   build-parameters:
-    gnore: [".env", "./node_modules", "./mta_archives", "./app"]
+    ignore: [".env", "./node_modules", "./mta_archives", "./app"]
     builder: npm-ci
 - name: MyHANAApp-db-deployer
   type: hdb
